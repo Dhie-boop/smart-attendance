@@ -105,8 +105,22 @@ export default function ScanPage() {
     };
   }, []);
 
-  const handleToken = async (token: string) => {
+  /** Extract the JWT token from a QR payload that may be a URL or a raw token. */
+  const extractToken = (qrPayload: string): string => {
+    try {
+      const url = new URL(qrPayload);
+      return url.searchParams.get('token') ?? qrPayload;
+    } catch {
+      // Not a URL — treat as raw JWT token
+      return qrPayload;
+    }
+  };
+
+  const handleToken = async (rawPayload: string) => {
     if (scanState === 'success') return;
+
+    const token = extractToken(rawPayload);
+
     if (!studentNumber.trim()) {
       setMessage('Enter your student ID before scanning or submitting a token.');
       setScanState('error');

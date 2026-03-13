@@ -36,8 +36,13 @@ def decode_qr_token(token: str) -> dict:
 
 
 def generate_qr_image_base64(token: str) -> str:
-    """Generate a QR code image for *token* and return it as a base64-encoded PNG string."""
-    img = qrcode.make(token)
+    """Generate a QR code whose payload is a deep-link URL.
+
+    When scanned with *any* QR reader the student's browser opens the
+    ``/attend?token=…`` page which auto-submits attendance.
+    """
+    url = f"{settings.FRONTEND_URL}/attend?token={token}"
+    img = qrcode.make(url)
     buffer = io.BytesIO()
     img.save(buffer, format="PNG")
     return base64.b64encode(buffer.getvalue()).decode("utf-8")

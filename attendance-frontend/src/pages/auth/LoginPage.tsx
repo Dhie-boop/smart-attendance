@@ -19,6 +19,12 @@ export default function LoginPage() {
 
   // Redirect if already logged in
   if (user) {
+    // If there's a pending attend token from a QR scan, go there first
+    const pendingToken = sessionStorage.getItem('pending_attend_token');
+    if (pendingToken) {
+      sessionStorage.removeItem('pending_attend_token');
+      return <Navigate to={`/attend?token=${encodeURIComponent(pendingToken)}`} replace />;
+    }
     return <Navigate to={getHomeRouteByRole(user.role)} replace />;
   }
 

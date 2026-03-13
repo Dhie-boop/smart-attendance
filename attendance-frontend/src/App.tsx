@@ -9,6 +9,7 @@ import LecturerCoursesPage from './pages/lecturer/CoursesPage';
 import StartSessionPage from './pages/lecturer/StartSessionPage';
 import AttendanceReportPage from './pages/attendance/ReportPage';
 import ScanPage from './pages/student/ScanPage';
+import AutoAttendPage from './pages/student/AutoAttendPage';
 import AttendanceHistoryPage from './pages/student/HistoryPage';
 import AdminAnalyticsDashboard from './pages/admin/AnalyticsDashboard';
 import CourseManagement from './pages/admin/CourseManagement';
@@ -53,6 +54,9 @@ export default function App() {
           {/* Public */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+
+          {/* QR deep-link — accessible before login (page handles auth itself) */}
+          <Route path="/attend" element={<AutoAttendPage />} />
 
           {/* Protected — shared layout */}
           <Route element={<AppLayout />}>

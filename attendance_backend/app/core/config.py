@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     QR_TOKEN_EXPIRE_SECONDS: int = 300  # 5 minutes (kept for backward compat)
     SESSION_DURATION_SECONDS: int = 7200  # 2 hours — how long a live session stays active
     LATE_THRESHOLD_SECONDS: int = 600   # 10 min after session start → marked "late"
+    FRONTEND_URL: str = "http://localhost:5173"  # Where the React frontend runs
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
