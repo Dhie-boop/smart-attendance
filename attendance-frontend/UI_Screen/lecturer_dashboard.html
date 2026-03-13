@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#173F7A",
+                        "accent": "#C8B27A",
+                        "background-light": "#F6F8FC",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>Lecturer Dashboard - Cavendish University Uganda</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="flex min-h-screen">
+<!-- Sidebar -->
+<aside class="w-64 bg-primary text-white flex flex-col fixed h-full z-50">
+<div class="p-6 flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="bg-white rounded-full p-1 h-10 w-10 flex items-center justify-center overflow-hidden">
+<img class="h-8 w-8 object-contain" data-alt="Cavendish University Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTHpwEZo92wLBLuB7Q39f-mztAceGkyDoYlNckRuTouXImo5fpo5wlb0gkxPUxJ9jP4u2tBoogSqtmKyJ60wyvSlf4IHpYOPLd8eO5TUmsZ8Z7QN6Q_BQxojtWOyvle-xQeMTloO_g4pRWiFdwYOSE1l5JIOqyOlGV13FqGHY_gIQ2Gpf4pkYzgj6aFPevdkvlhRI4XAVy7Zlk_N5KqJuzlwvYL7_YpeUeu2009WXOqv-2SIGOL2ezQBXn1tbNAb_2ZDFKNtIfzMc"/>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold leading-tight">Cavendish University</span>
+<span class="text-[10px] uppercase tracking-widest text-white/70">Uganda</span>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/10 text-white transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 text-white/80 transition-colors" href="#">
+<span class="material-symbols-outlined">book</span>
+<span class="text-sm font-medium">My Courses</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 text-white/80 transition-colors" href="#">
+<span class="material-symbols-outlined">play_circle</span>
+<span class="text-sm font-medium">Start Session</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-white/5 text-white/80 transition-colors" href="#">
+<span class="material-symbols-outlined">assessment</span>
+<span class="text-sm font-medium">Reports</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-white/10">
+<div class="flex items-center gap-3 mb-4">
+<div class="h-10 w-10 rounded-full bg-accent flex items-center justify-center text-primary font-bold">
+                        JD
+                    </div>
+<div class="flex flex-col overflow-hidden">
+<span class="text-sm font-semibold truncate">Dr. John Doe</span>
+<span class="text-xs text-white/60 truncate">Senior Lecturer</span>
+</div>
+</div>
+<button class="w-full py-2 bg-accent hover:bg-accent/90 text-primary font-bold text-sm rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">logout</span> Sign Out
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64 p-8">
+<!-- Header -->
+<header class="flex items-center justify-between mb-10">
+<div class="flex flex-col gap-1">
+<h1 class="text-3xl font-extrabold text-primary">Welcome Back, Lecturer</h1>
+<p class="text-slate-500 text-base">Here is what is happening with your classes today.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined text-slate-400 absolute left-3 top-1/2 -translate-y-1/2">search</span>
+<input class="pl-10 pr-4 py-2 rounded-lg border-none bg-white shadow-sm ring-1 ring-slate-200 focus:ring-2 focus:ring-primary w-64 outline-none transition-all" placeholder="Search courses or students..." type="text"/>
+</div>
+<button class="h-10 w-10 flex items-center justify-center rounded-lg bg-white border border-slate-200 text-slate-600 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 h-2 w-2 bg-red-500 rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-5">
+<div class="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">groups</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Total Students</p>
+<h3 class="text-3xl font-bold text-slate-900">1,240</h3>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-5">
+<div class="h-14 w-14 rounded-xl bg-green-100 flex items-center justify-center text-green-600">
+<span class="material-symbols-outlined text-3xl">sensors</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Active Sessions</p>
+<h3 class="text-3xl font-bold text-slate-900">03</h3>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 flex items-center gap-5">
+<div class="h-14 w-14 rounded-xl bg-accent/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl">calendar_today</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium uppercase tracking-wider">Today's Classes</p>
+<h3 class="text-3xl font-bold text-slate-900">04</h3>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Courses Section -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h2 class="text-xl font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">book</span> My Courses
+                        </h2>
+<button class="text-sm font-semibold text-primary hover:underline">View All</button>
+</div>
+<!-- BIT311 Card -->
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group hover:border-primary/30 transition-all">
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="bg-accent text-primary px-3 py-1 rounded text-xs font-bold whitespace-nowrap">BIT311</div>
+<div>
+<h4 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">ICT Project Planning</h4>
+<p class="text-slate-500 text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-base">schedule</span> 09:00 AM - 11:00 AM • Lab 04
+                                    </p>
+</div>
+</div>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">play_arrow</span> Start Session
+                            </button>
+</div>
+</div>
+<!-- BIT213 Card -->
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group hover:border-primary/30 transition-all">
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="bg-accent text-primary px-3 py-1 rounded text-xs font-bold whitespace-nowrap">BIT213</div>
+<div>
+<h4 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">Web Development</h4>
+<p class="text-slate-500 text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-base">schedule</span> 01:00 PM - 03:00 PM • Lecture Room 12
+                                    </p>
+</div>
+</div>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">play_arrow</span> Start Session
+                            </button>
+</div>
+</div>
+<!-- BIT113 Card -->
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group hover:border-primary/30 transition-all">
+<div class="p-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="bg-accent text-primary px-3 py-1 rounded text-xs font-bold whitespace-nowrap">BIT113</div>
+<div>
+<h4 class="text-lg font-bold text-slate-900 group-hover:text-primary transition-colors">Fundamentals of Info Systems</h4>
+<p class="text-slate-500 text-sm flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-base">schedule</span> 04:00 PM - 06:00 PM • Hall B
+                                    </p>
+</div>
+</div>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-primary/90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">play_arrow</span> Start Session
+                            </button>
+</div>
+</div>
+</div>
+<!-- Recently Ended Panel -->
+<div class="flex flex-col gap-6">
+<h2 class="text-xl font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined">history</span> Recent Sessions
+                    </h2>
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 p-6 flex flex-col gap-4">
+<div class="flex flex-col gap-4">
+<!-- Session Item -->
+<div class="border-b border-slate-100 pb-4 last:border-0 last:pb-0">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-slate-400">BIT411</span>
+<span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">2h ago</span>
+</div>
+<h5 class="text-sm font-bold text-slate-800">Advanced Networking</h5>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-medium">
+<span class="material-symbols-outlined text-sm text-green-500">how_to_reg</span>
+                                        45 Attendance
+                                    </div>
+<button class="text-xs font-bold text-primary hover:text-accent transition-colors">Details</button>
+</div>
+</div>
+<!-- Session Item -->
+<div class="border-b border-slate-100 pb-4 last:border-0 last:pb-0">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-slate-400">BIT221</span>
+<span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Yesterday</span>
+</div>
+<h5 class="text-sm font-bold text-slate-800">Data Structures &amp; Algo</h5>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-medium">
+<span class="material-symbols-outlined text-sm text-green-500">how_to_reg</span>
+                                        38 Attendance
+                                    </div>
+<button class="text-xs font-bold text-primary hover:text-accent transition-colors">Details</button>
+</div>
+</div>
+<!-- Session Item -->
+<div class="border-b border-slate-100 pb-4 last:border-0 last:pb-0">
+<div class="flex justify-between items-start mb-2">
+<span class="text-xs font-bold text-slate-400">BIT112</span>
+<span class="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Yesterday</span>
+</div>
+<h5 class="text-sm font-bold text-slate-800">Communication Skills</h5>
+<div class="flex items-center justify-between mt-3">
+<div class="flex items-center gap-2 text-xs text-slate-500 font-medium">
+<span class="material-symbols-outlined text-sm text-green-500">how_to_reg</span>
+                                        52 Attendance
+                                    </div>
+<button class="text-xs font-bold text-primary hover:text-accent transition-colors">Details</button>
+</div>
+</div>
+</div>
+<button class="w-full mt-2 py-2 border border-slate-200 rounded-lg text-sm font-bold text-slate-600 hover:bg-slate-50 transition-colors">
+                            View All Reports
+                        </button>
+</div>
+<!-- Announcements/Info (Extra Context) -->
+<div class="bg-primary p-6 rounded-xl shadow-sm text-white relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-bold text-lg mb-2">Exam Portal Update</h4>
+<p class="text-sm text-white/80 leading-relaxed mb-4">The new BIT end-of-semester exam templates are now available for download.</p>
+<a class="inline-block px-4 py-2 bg-accent text-primary rounded-lg font-bold text-xs uppercase tracking-wider" href="#">Download Now</a>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-8xl">campaign</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

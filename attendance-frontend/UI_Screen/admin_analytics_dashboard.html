@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cavendish University Uganda Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#113e79",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#111821",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark px-10 py-3 sticky top-0 z-50">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8 flex items-center justify-center bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined">account_balance</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">CUU Portal</h2>
+</div>
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-slate-500 flex border-none bg-slate-100 dark:bg-slate-800 items-center justify-center pl-4 rounded-l-lg" data-icon="search">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100 focus:ring-0 h-full placeholder:text-slate-500 px-4 rounded-r-lg text-sm font-normal" placeholder="Search analytics..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end gap-4 items-center">
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-800 mx-2"></div>
+<div class="flex items-center gap-3">
+<div class="text-right hidden md:block">
+<p class="text-xs font-bold text-slate-900 dark:text-slate-100">Dr. Sarah Namubiru</p>
+<p class="text-[10px] text-slate-500">Academic Registrar</p>
+</div>
+<div class="bg-primary/20 rounded-full size-10 border-2 border-primary/10 bg-center bg-no-repeat bg-cover" data-alt="Headshot of university admin staff" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDIWuDsPGSAoaeY9fZqL6opPdIEKx0gQFMy2Kxz9rQ_hPhQqqncySIwUFj1HOiXiU2YaoUJpI_-o3ek_DluGA4PqO-7BwdKOBjjkHCD93WrvFOIQmFdwwg6U8q3YLnhnZzcPVYj-kOt6j1AtaCP6fGkOzlOC-OJagGtMUxtX0MTFFpsWlsYotKyol4hxcCuufKxNk7pWQzND7jzzATl6v3mvt7dcHqZV8lODEkOEXuYI_-RUOcc1F18zlVR6dH4mx0TyFo9ZcQkP-A");'></div>
+</div>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- Sidebar Navigation -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark hidden lg:flex flex-col p-4 gap-6">
+<div>
+<p class="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Main Menu</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-primary text-white shadow-lg shadow-primary/20" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Academic Reports</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-sm font-medium">Students</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">school</span>
+<span class="text-sm font-medium">Courses</span>
+</a>
+</nav>
+</div>
+<div>
+<p class="px-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">System</p>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-sm font-medium">Finances</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/5 hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="text-sm font-medium">Audit Logs</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-4 bg-primary/5 rounded-xl border border-primary/10">
+<p class="text-xs font-bold text-primary mb-1">Academic Year 2023/24</p>
+<p class="text-[10px] text-slate-500 leading-tight">Semester II (In Progress)</p>
+<div class="w-full bg-slate-200 dark:bg-slate-700 h-1.5 rounded-full mt-3 overflow-hidden">
+<div class="bg-primary h-full w-[65%]"></div>
+</div>
+</div>
+</aside>
+<!-- Main Dashboard Area -->
+<main class="flex-1 p-6 lg:px-10 overflow-y-auto">
+<!-- Header Section -->
+<div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-slate-900 dark:text-slate-100 text-3xl font-extrabold leading-tight tracking-[-0.03em]">Analytics Overview</h1>
+<p class="text-slate-500 text-sm">Real-time performance metrics for Cavendish University Uganda campuses.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-lg">calendar_today</span>
+<span>Last 30 Days</span>
+</button>
+<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-shadow shadow-md">
+<span class="material-symbols-outlined text-lg">download</span>
+<span>Export Report</span>
+</button>
+</div>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-4 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="size-10 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center">
+<span class="material-symbols-outlined">person_add</span>
+</div>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded">+4.2%</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Total Students</p>
+<p class="text-slate-900 dark:text-slate-100 text-2xl font-bold">12,450</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-4 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="size-10 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center">
+<span class="material-symbols-outlined">library_books</span>
+</div>
+<span class="text-xs font-bold text-rose-600 bg-rose-50 dark:bg-rose-900/20 px-2 py-1 rounded">-2.1%</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Active Courses</p>
+<p class="text-slate-900 dark:text-slate-100 text-2xl font-bold">148</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-4 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="size-10 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center">
+<span class="material-symbols-outlined">how_to_reg</span>
+</div>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded">+1.5%</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Attendance Rate</p>
+<p class="text-slate-900 dark:text-slate-100 text-2xl font-bold">87.5%</p>
+</div>
+</div>
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col gap-4 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="size-10 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-600 flex items-center justify-center">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-900/20 px-2 py-1 rounded">+12.8%</span>
+</div>
+<div>
+<p class="text-slate-500 text-sm font-medium">Revenue (UGX)</p>
+<p class="text-slate-900 dark:text-slate-100 text-2xl font-bold">3.4B</p>
+</div>
+</div>
+</div>
+<!-- Charts and Tables -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Attendance Trend Chart Placeholder -->
+<div class="lg:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100">Attendance Trends</h3>
+<div class="flex gap-2">
+<span class="flex items-center gap-1.5 text-xs text-slate-500">
+<span class="size-2 rounded-full bg-primary"></span> Current Period
+                                </span>
+<span class="flex items-center gap-1.5 text-xs text-slate-500">
+<span class="size-2 rounded-full bg-slate-300"></span> Previous Period
+                                </span>
+</div>
+</div>
+<div class="relative h-[300px] w-full bg-slate-50 dark:bg-slate-900/50 rounded-lg flex items-end justify-between p-4 px-8 overflow-hidden">
+<!-- Simple SVG Visualization for a graph -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10">
+<span class="material-symbols-outlined text-[150px]">show_chart</span>
+</div>
+<div class="w-8 bg-primary/20 rounded-t-sm h-[40%] relative group">
+<div class="absolute bottom-0 w-full bg-primary h-[85%] rounded-t-sm"></div>
+<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-bold">MON</div>
+</div>
+<div class="w-8 bg-primary/20 rounded-t-sm h-[60%] relative">
+<div class="absolute bottom-0 w-full bg-primary h-[70%] rounded-t-sm"></div>
+<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-bold">TUE</div>
+</div>
+<div class="w-8 bg-primary/20 rounded-t-sm h-[50%] relative">
+<div class="absolute bottom-0 w-full bg-primary h-[90%] rounded-t-sm"></div>
+<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-bold">WED</div>
+</div>
+<div class="w-8 bg-primary/20 rounded-t-sm h-[70%] relative">
+<div class="absolute bottom-0 w-full bg-primary h-[75%] rounded-t-sm"></div>
+<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-bold">THU</div>
+</div>
+<div class="w-8 bg-primary/20 rounded-t-sm h-[90%] relative">
+<div class="absolute bottom-0 w-full bg-primary h-[88%] rounded-t-sm"></div>
+<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-bold">FRI</div>
+</div>
+<div class="w-8 bg-primary/20 rounded-t-sm h-[30%] relative">
+<div class="absolute bottom-0 w-full bg-primary h-[20%] rounded-t-sm"></div>
+<div class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-slate-400 font-bold">SAT</div>
+</div>
+</div>
+<div class="mt-10 pt-6 border-t border-slate-100 dark:border-slate-700 flex justify-between">
+<div class="flex flex-col">
+<p class="text-xs text-slate-500 font-medium">Highest Daily</p>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">92.4% (Friday)</p>
+</div>
+<div class="flex flex-col text-right">
+<p class="text-xs text-slate-500 font-medium">Target Rate</p>
+<p class="text-sm font-bold text-emerald-600">85.0% (Surpassed)</p>
+</div>
+</div>
+</div>
+<!-- Course-level performance summary -->
+<div class="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100">Course Performance</h3>
+<button class="text-primary text-xs font-bold hover:underline">View All</button>
+</div>
+<div class="space-y-5">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-semibold text-slate-700 dark:text-slate-300">Software Engineering</span>
+<span class="text-emerald-600 font-bold">94%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[94%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-semibold text-slate-700 dark:text-slate-300">Business Administration</span>
+<span class="text-emerald-600 font-bold">88%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[88%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-semibold text-slate-700 dark:text-slate-300">Public Health</span>
+<span class="text-primary font-bold">82%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[82%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-semibold text-slate-700 dark:text-slate-300">International Relations</span>
+<span class="text-amber-500 font-bold">76%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[76%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between text-sm">
+<span class="font-semibold text-slate-700 dark:text-slate-300">Cyber Security</span>
+<span class="text-emerald-600 font-bold">91%</span>
+</div>
+<div class="h-2 w-full bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[91%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-6">
+<div class="bg-primary/5 border border-primary/10 rounded-lg p-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-[10px] text-slate-600 dark:text-slate-400">Low performing courses are flagged for faculty review every Monday at 9:00 AM.</p>
+</div>
+</div>
+</div>
+<!-- Recent Faculty Activity -->
+<div class="lg:col-span-3 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm overflow-hidden">
+<div class="p-6 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between">
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100">Top Performing Faculties</h3>
+<div class="flex items-center border border-slate-200 dark:border-slate-700 rounded overflow-hidden">
+<button class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-xs font-bold text-slate-900 dark:text-slate-100">Campus View</button>
+<button class="px-3 py-1 text-xs font-bold text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-900">Faculty View</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-slate-50 dark:bg-slate-900/50">
+<tr>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Faculty Name</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Enrolled Students</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Retention Rate</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Avg GPA</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase">Status</th>
+<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 dark:divide-slate-700">
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">BIT</div>
+<span class="text-sm font-semibold text-slate-900 dark:text-slate-100">Science &amp; Technology</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">4,210</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-900 dark:text-slate-100">92%</span>
+<span class="text-[10px] text-emerald-600">↑ 1.2%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-900 dark:text-slate-100">3.45</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700 uppercase">Excellent</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/70 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">BBA</div>
+<span class="text-sm font-semibold text-slate-900 dark:text-slate-100">Business &amp; Management</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">3,850</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-900 dark:text-slate-100">89%</span>
+<span class="text-[10px] text-rose-600">↓ 0.5%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-900 dark:text-slate-100">3.12</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700 uppercase">Healthy</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/70 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded bg-primary/10 text-primary flex items-center justify-center font-bold text-xs">LLB</div>
+<span class="text-sm font-semibold text-slate-900 dark:text-slate-100">Law</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 dark:text-slate-400">1,940</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<span class="text-sm text-slate-900 dark:text-slate-100">95%</span>
+<span class="text-[10px] text-emerald-600">↑ 2.4%</span>
+</div>
+</td>
+<td class="px-6 py-4 text-sm text-slate-900 dark:text-slate-100">3.60</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-700 uppercase">Excellent</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-primary hover:text-primary/70 transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+</body></html>

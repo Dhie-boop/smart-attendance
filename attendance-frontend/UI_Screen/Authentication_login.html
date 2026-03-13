@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | Cavendish University Uganda Attendance Portal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#113e79",
+              "primary-dark": "#0D2A56",
+              "background-light": "#F6F8FC",
+              "background-dark": "#111821",
+              "accent": "#173F7A"
+            },
+            fontFamily: {
+              "display": ["Sora", "sans-serif"],
+              "body": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-body antialiased">
+<div class="flex min-h-screen">
+<!-- Left Hero Panel -->
+<div class="hidden lg:flex lg:w-1/2 relative flex-col justify-between p-12 bg-primary-dark overflow-hidden">
+<!-- Decorative Background Element -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" data-alt="Campus architecture and academic building background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA1ZYxfnPV0yM9YCI4G07x-wUDbjfKYOozJSTd6DFjqWIABilyQtI0wOIlO11-f0pO4o7NQO604CwDQFKlY96y_VdTjVpwYV13tKoa7lITlEuwl_DWSasvK9SicaJwo24G6B3YK0ySNDepf8mCU8wp7JsU0s_hr_pcF15BehK0kNghj6Q29DQ86oL42Zj56j0YnVuiO19yblpSUlgIpB2SM-18sNy2Y6vOnkqrILDjatsLG1S8VLTSaLM81irJGP4GmXqXTz93wFgE"); background-size: cover; background-position: center;'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary-dark/90 to-transparent"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3">
+<div class="bg-white p-2 rounded-lg">
+<svg class="w-8 h-8 text-primary" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<span class="text-white font-display text-xl font-bold tracking-tight">Cavendish University Uganda</span>
+</div>
+</div>
+<div class="relative z-10 max-w-lg">
+<h1 class="text-white font-display text-5xl font-extrabold leading-tight mb-6">
+                    Digital Excellence in <span class="text-blue-400">Education.</span>
+</h1>
+<p class="text-blue-100 text-lg leading-relaxed mb-8">
+                    The CUU Attendance Portal streamlines academic tracking, empowering students and staff with real-time digital accountability and performance insights.
+                </p>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+<span class="material-symbols-outlined text-white text-sm">verified_user</span>
+<span class="text-white text-xs font-medium uppercase tracking-wider">Secure Access</span>
+</div>
+<div class="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+<span class="material-symbols-outlined text-white text-sm">schedule</span>
+<span class="text-white text-xs font-medium uppercase tracking-wider">Real-time Sync</span>
+</div>
+</div>
+</div>
+<div class="relative z-10">
+<p class="text-blue-200/60 text-sm">© 2024 Cavendish University Uganda. Success begins at Cavendish.</p>
+</div>
+</div>
+<!-- Right Login Panel -->
+<div class="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 md:p-20">
+<div class="w-full max-w-[440px]">
+<!-- Header Mobile Logo -->
+<div class="lg:hidden flex justify-center mb-8">
+<div class="flex items-center gap-3">
+<svg class="w-10 h-10 text-primary" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+<h2 class="text-primary font-display text-xl font-bold">CUU Portal</h2>
+</div>
+</div>
+<div class="mb-10 text-center lg:text-left">
+<h2 class="text-slate-900 dark:text-slate-100 font-display text-3xl font-bold mb-3">Welcome Back</h2>
+<p class="text-slate-500 dark:text-slate-400">Please sign in to access your dashboard.</p>
+</div>
+<!-- Role Selector -->
+<div class="mb-8">
+<div class="flex p-1 bg-slate-200/50 dark:bg-slate-800 rounded-xl">
+<label class="flex-1">
+<input checked="" class="sr-only peer" name="role" type="radio" value="student"/>
+<div class="cursor-pointer text-center py-2.5 rounded-lg text-sm font-semibold transition-all peer-checked:bg-white peer-checked:text-primary peer-checked:shadow-sm text-slate-500">
+                                Student
+                            </div>
+</label>
+<label class="flex-1">
+<input class="sr-only peer" name="role" type="radio" value="lecturer"/>
+<div class="cursor-pointer text-center py-2.5 rounded-lg text-sm font-semibold transition-all peer-checked:bg-white peer-checked:text-primary peer-checked:shadow-sm text-slate-500">
+                                Lecturer
+                            </div>
+</label>
+<label class="flex-1">
+<input class="sr-only peer" name="role" type="radio" value="admin"/>
+<div class="cursor-pointer text-center py-2.5 rounded-lg text-sm font-semibold transition-all peer-checked:bg-white peer-checked:text-primary peer-checked:shadow-sm text-slate-500">
+                                Admin
+                            </div>
+</label>
+</div>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2" for="email">University Email</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">mail</span>
+</div>
+<input class="w-full pl-11 pr-4 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400" id="email" placeholder="e.g. j.doe@cavendish.ac.ug" type="email"/>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="block text-sm font-semibold text-slate-700 dark:text-slate-300" for="password">Password</label>
+<a class="text-xs font-bold text-primary hover:text-accent transition-colors" href="#">Forgot Password?</a>
+</div>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-400 text-[20px]">lock</span>
+</div>
+<input class="w-full pl-11 pr-12 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors outline-none text-slate-900 dark:text-slate-100 placeholder:text-slate-400" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-4 flex items-center" type="button">
+<span class="material-symbols-outlined text-slate-400 text-[20px] hover:text-slate-600 transition-colors">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center">
+<input class="w-4 h-4 text-primary border-slate-300 rounded focus:ring-primary transition-colors" id="remember" type="checkbox"/>
+<label class="ml-2 block text-sm text-slate-600 dark:text-slate-400" for="remember">Keep me signed in for 30 days</label>
+</div>
+<button class="w-full py-4 bg-accent hover:bg-primary text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 active:scale-[0.98] flex items-center justify-center gap-2" type="submit">
+<span>Sign In to Dashboard</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</form>
+<div class="mt-10 pt-8 border-t border-slate-100 dark:border-slate-800 text-center">
+<p class="text-slate-500 dark:text-slate-400 text-sm">
+                        New to the university portal? 
+                        <a class="text-primary font-bold hover:underline" href="#">Register your account</a>
+</p>
+</div>
+<div class="mt-8 flex justify-center gap-6">
+<a class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs transition-colors" href="#">Help Center</a>
+<a class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs transition-colors" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs transition-colors" href="#">Technical Support</a>
+</div>
+</div>
+</div>
+</div>
+</body></html>
