@@ -11,14 +11,14 @@ services:
     name: smart-attendance-api
     runtime: python
     rootDir: attendance_backend
-    buildCommand: pip install -r attendance_backend/requirements.txt
-    startCommand: sh attendance_backend/start.sh
+    buildCommand: if [ -f attendance_backend/requirements.txt ]; then pip install -r attendance_backend/requirements.txt; else pip install -r attendance_backend/requirements.txt; fi
+    startCommand: if [ -f attendance_backend/main.py ]; then cd attendance_backend; fi; python -m alembic upgrade head && python -m uvicorn main:app --host 0.0.0.0 --port $PORT
     plan: free
     envVars:
       - key: DATABASE_URL
         fromDatabase:
           name: smart-attendance-db
-          property: connectionString
+          property: internalConnectionString
       - key: SECRET_KEY
         generateValue: true          # Render auto-generates a secure random value
       - key: ALGORITHM

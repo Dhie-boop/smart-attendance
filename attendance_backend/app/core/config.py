@@ -1,3 +1,4 @@
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict  # type: ignore[import-untyped]
 
 
@@ -10,6 +11,13 @@ class Settings(BaseSettings):
     SESSION_DURATION_SECONDS: int = 7200  # 2 hours — how long a live session stays active
     LATE_THRESHOLD_SECONDS: int = 600   # 10 min after session start → marked "late"
     FRONTEND_URL: str = "http://localhost:5173"  # Where the React frontend runs
+
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def normalize_database_url(cls, value: str) -> str:
+        if isinstance(value, str) and value.startswith("postgres://"):
+            return value.replace("postgres://", "postgresql://", 1)
+        return value
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
