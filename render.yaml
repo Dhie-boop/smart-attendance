@@ -10,8 +10,9 @@ services:
   - type: web
     name: smart-attendance-api
     runtime: python
-    buildCommand: pip install -r attendance_backend/requirements.txt
-    startCommand: sh attendance_backend/start.sh
+    rootDir: attendance_backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: sh start.sh
     plan: free
     envVars:
       - key: DATABASE_URL
