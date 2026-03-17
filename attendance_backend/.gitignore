@@ -1,1 +1,33 @@
-.github
+# ── Secrets / Config ─────────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Virtual environment ───────────────────────────────────────────────────────
+smart/
+venv/
+.venv/
+env/
+
+# ── Python bytecode / cache ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# ── Build / Distribution ──────────────────────────────────────────────────────
+*.egg-info/
+dist/
+build/
+
+# ── Data / Uploads ───────────────────────────────────────────────────────────
+*.xlsx
+*.xls
+*.csv
+"Courses & Students details/"
+
+# ── OS / Editor ──────────────────────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
