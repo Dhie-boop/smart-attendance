@@ -11,7 +11,7 @@ services:
     name: smart-attendance-api
     runtime: python
     rootDir: attendance_backend
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r attendrequirements.txt
     startCommand: sh start.sh
     plan: free
     envVars:
