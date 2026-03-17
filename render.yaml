@@ -10,11 +10,8 @@ services:
   - type: web
     name: smart-attendance-api
     runtime: docker
-    dockerfilePath: ./attendance_backend/Dockerfile
-    dockerContext: ./attendance_backend
+    rootDir: attendance_backend   # Render looks for Dockerfile here
     plan: free
-    # Run Alembic migrations then start the server
-    startCommand: "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
