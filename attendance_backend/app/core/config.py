@@ -1,4 +1,6 @@
-from pydantic import field_validator
+import os
+
+from pydantic import field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict  # type: ignore[import-untyped]
 
 
@@ -18,6 +20,14 @@ class Settings(BaseSettings):
         if isinstance(value, str) and value.startswith("postgres://"):
             return value.replace("postgres://", "postgresql://", 1)
         return value
+
+    @model_validator(mode="after")
+    def validate_render_database_url(self) -> "Settings":
+        if os.getenv("RENDER") == "true" and "localhost" in self.DATABASE_URL:
+            raise ValueError(
+                "DATABASE_URL is pointing to localhost on Render. Set the DATABASE_URL environment variable to the Render Postgres internal connection string."
+            )
+        return self
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
