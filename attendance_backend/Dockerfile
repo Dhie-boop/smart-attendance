@@ -27,6 +27,9 @@ COPY --from=builder /install /usr/local
 # Copy project source
 COPY . .
 
+# Make the start script executable
+RUN chmod +x start.sh
+
 EXPOSE 8000
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["./start.sh"]
