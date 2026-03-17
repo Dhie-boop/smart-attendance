@@ -1,0 +1,49 @@
+databases:
+  # ── Managed PostgreSQL ────────────────────────────────────────────────────
+  - name: smart-attendance-db
+    plan: free
+    databaseName: attendance_db
+    user: attendance_user
+
+services:
+  # ── Backend  (FastAPI via Docker) ─────────────────────────────────────────
+  - type: web
+    name: smart-attendance-api
+    runtime: docker
+    dockerfilePath: ./attendance_backend/Dockerfile
+    dockerContext: ./attendance_backend
+    plan: free
+    # Run Alembic migrations then start the server
+    startCommand: "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: smart-attendance-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true          # Render auto-generates a secure random value
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 30
+      - key: QR_TOKEN_EXPIRE_SECONDS
+        value: 300
+      - key: FRONTEND_URL
+        sync: false   # Set to your frontend Render URL after it deploys
+
+  # ── Frontend  (React + Vite → Static Site) ────────────────────────────────
+  - type: web
+    name: smart-attendance-frontend
+    runtime: static
+    rootDir: attendance-frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    plan: free
+    envVars:
+      - key: VITE_API_URL
+        sync: false   # Set this manually after the backend URL is known
+    routes:
+      # SPA fallback — send all paths to index.html so React Router works
+      - type: rewrite
+        source: /*
+        destination: /index.html
