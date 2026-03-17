@@ -6,11 +6,13 @@ databases:
     user: attendance_user
 
 services:
-  # ── Backend  (FastAPI via Docker) ─────────────────────────────────────────
+  # ── Backend  (FastAPI — native Python runtime) ───────────────────────────
   - type: web
     name: smart-attendance-api
-    runtime: docker
-    rootDir: attendance_backend   # Render looks for Dockerfile here
+    runtime: python
+    rootDir: attendance_backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000
     plan: free
     envVars:
       - key: DATABASE_URL
