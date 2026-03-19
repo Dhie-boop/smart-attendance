@@ -11,8 +11,8 @@ services:
     name: smart-attendance-api
     runtime: python
     rootDir: attendance_backend
-    buildCommand: pip install -r attendance_backend/requirements.txt
-    startCommand: cd attendance_backend && python -m alembic upgrade head && python -m uvicorn main:app --host 0.0.0.0 --port $PORT
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m alembic upgrade head && python -m uvicorn main:app --host 0.0.0.0 --port $PORT
     plan: free
     envVars:
       - key: DATABASE_URL
