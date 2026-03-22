@@ -334,7 +334,7 @@ npm run preview
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 
 The API follows REST principles and is fully documented with OpenAPI/Swagger.
 
@@ -409,7 +409,7 @@ Visit http://localhost:8000/docs for interactive API documentation where you can
 - See request/response schemas
 - Authenticate and make authorized requests
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 smart-attendance/
@@ -473,7 +473,7 @@ smart-attendance/
 └── README.md                        # This file
 ```
 
-## 🔒 Security Features
+## Security Features
 
 ### Anti-Cheating Mechanisms
 
