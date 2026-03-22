@@ -1,8 +1,8 @@
-# Smart Attendance System 🎓
+# Smart Attendance System 
 
 A modern web-based attendance tracking application that uses dynamic QR codes for secure, real-time attendance marking in educational institutions. Teachers generate time-limited QR codes for their class sessions, and students scan them to mark their attendance instantly.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#-features)
 - [Architecture](#-architecture)
@@ -17,7 +17,7 @@ A modern web-based attendance tracking application that uses dynamic QR codes fo
 - [Deployment](#-deployment)
 - [Troubleshooting](#-troubleshooting)
 
-## ✨ Features
+##  Features
 
 ### For Teachers/Lecturers
 
@@ -63,7 +63,7 @@ The application follows a modern three-tier architecture:
 - **Authentication**: JWT-based with secure token management
 - **QR Generation**: Dynamic QR codes with time-based expiration
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 
@@ -93,7 +93,7 @@ The application follows a modern three-tier architecture:
 - **Deployment**: Render.com (configured)
 - **CI/CD**: Ready for GitHub Actions
 
-## 📦 Prerequisites
+## Prerequisites
 
 Before running this project, ensure you have the following installed:
 
@@ -114,7 +114,7 @@ Before running this project, ensure you have the following installed:
 - [Git](https://git-scm.com/downloads) for version control
 - [Postman](https://www.postman.com/downloads/) or similar for API testing
 
-## 🚀 Local Setup
+## Local Setup
 
 ### Option 1: Using Docker Compose (Recommended)
 
